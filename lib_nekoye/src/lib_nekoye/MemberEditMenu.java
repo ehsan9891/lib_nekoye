@@ -1,13 +1,23 @@
 package lib_nekoye;
 
+
 import java.util.Scanner;
 
-public class MemberListMenu {
+public class MemberEditMenu {
+
 	public void showWelcome() {
-		System.out.println("Welcome to List member menu");
+		System.out.println("Welcome to Edit member menu");
 	}
 
-	public Member getInput(int memberId) {
+	public int getIdForEdit() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Please enter the INDEX of member : ");
+		String id = scanner.next();
+
+		return Integer.parseInt(id);
+	}
+
+	public Member getValues(int memberId) {
 		// name
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Please enter the name : ");
@@ -26,8 +36,7 @@ public class MemberListMenu {
 		System.out.println("Your gender: " + gender);
 
 		Member member = new Member(memberId, name, numerical_age, gender);
-		
-		return member;
 
+		return member;
 	}
 }
